@@ -18,11 +18,12 @@ func main() {
 		return
 	}
 
-	ret, errTrack := music.Track()
+	ret, errTrack := music.Play()
 	if errTrack != nil {
 		fmt.Println(errTrack)
 	}
 
 	fmt.Println(ret.Track.Name)
+	fmt.Println(ret.Track.Artist)
 
 }

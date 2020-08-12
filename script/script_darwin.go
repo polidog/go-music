@@ -6,8 +6,8 @@ import (
 
 // NewScript is hoge
 func NewScript(service string) (Script, error) {
-	in := "/mac/" + service + ".js"
-	out := "cached_" + service + ".js"
+	in := "/mac/app.js"
+	out := "cached_app.js"
 	path, err := createScriptFile(in, out)
 	if err != nil {
 		return nil, err
@@ -27,5 +27,5 @@ type AppleScript struct {
 
 // Exec call osascript
 func (a AppleScript) Exec(command string) ([]byte, error) {
-	return exec.Command("osascript", a.path, command).Output()
+	return exec.Command("osascript", a.path, a.service, command).Output()
 }
