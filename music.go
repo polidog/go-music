@@ -3,7 +3,8 @@ package music
 import (
 	"encoding/json"
 	"fmt"
-	"go-music/script"
+
+	"github.com/polidog/go-music/script"
 )
 
 // Track is 再生しているトラック情報

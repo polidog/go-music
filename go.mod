@@ -1,4 +1,4 @@
-module go-music
+module github.com/polidog/go-music
 
 go 1.14
 

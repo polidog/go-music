@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	_ "go-music/script/statik"
+	_ "github.com/polidog/go-music/script/statik"
 
 	"github.com/rakyll/statik/fs"
 )
