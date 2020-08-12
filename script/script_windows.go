@@ -16,6 +16,6 @@ type WindowsScript struct {
 }
 
 // Exec call osascript
-func (a AppleScript) Exec(command string) ([]byte, error) {
+func (a WindowsScript) Exec(command string) ([]byte, error) {
 	return exec.Command("cscript -e", a.path, command).Output()
 }
