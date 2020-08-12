@@ -39,12 +39,32 @@ func NewPlayer(service string) (Player, error) {
 	}, nil
 }
 
+func (p *Player) Track() (Result, error) {
+	return p.exec("track")
+}
+
 func (p *Player) Play() (Result, error) {
 	return p.exec("play")
 }
 
-func (p *Player) Track() (Result, error) {
-	return p.exec("track")
+func (p *Player) Pause() (Result, error) {
+	return p.exec("pause")
+}
+
+func (p *Player) Next() (Result, error) {
+	return p.exec("next")
+}
+
+func (p *Player) Previous() (Result, error) {
+	return p.exec("previous")
+}
+
+func (p *Player) State() (Result, error) {
+	return p.exec("state")
+}
+
+func (p *Player) IsPlaying() (Result, error) {
+	return p.exec("isPlaying")
 }
 
 func (p *Player) exec(command string) (Result, error) {
