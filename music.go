@@ -68,6 +68,10 @@ func (p *Player) IsPlaying() (Result, error) {
 	return p.exec("isPlaying")
 }
 
+func (p *Player) Exec(command string) (Result, error) {
+	return p.exec(command)
+}
+
 func (p *Player) exec(command string) (Result, error) {
 	str, err := p.script.Exec(command)
 	result := Result{
