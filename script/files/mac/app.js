@@ -4,6 +4,13 @@ class Player {
     }
 
     track() {
+        return {
+            'track': this._track(),
+            'player_state': this.app.playerState()
+        }
+    }
+
+    _track() {
         const t = this.app.currentTrack
         return {
             name: t.name(),
@@ -17,7 +24,7 @@ class Player {
             this.app.play();
         }
         return {
-            'track': this.track(),
+            'track': this._track(),
             'player_state': 'playing'
         }
     }
@@ -31,7 +38,7 @@ class Player {
             this.app.pause();
         }
         return {
-            'track': this.track(),
+            'track': this._track(),
             'player_state': 'paused',
         }
     }
@@ -43,7 +50,7 @@ class Player {
     async next() {
         this.app.nextTrack();
         return {
-            'track': this.track(),
+            'track': this._track(),
             'player_state': this.app.playerState(),
         }
     }
@@ -51,7 +58,7 @@ class Player {
     previous() {
         this.app.previousTrack();
         return {
-            'track': this.track(),
+            'track': this._track(),
             'player_state': this.app.playerState(),
         }
     }

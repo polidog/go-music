@@ -18,6 +18,7 @@ type Script interface {
 func createScriptFile(in, out string) (string, error) {
 	dir := os.TempDir()
 	path := filepath.Join(dir, out)
+
 	if exists(path) {
 		return path, nil
 	}
