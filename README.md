@@ -15,13 +15,13 @@ import (
 
 func main() {
 
-	player, err := music.NewPlayer("spotify")
+	p, err := player.NewPlayer("spotify")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	res, errTrack := player.Track()
+	res, errTrack := p.Track()
 	if errTrack != nil {
 		fmt.Println(err)
 		return
